@@ -1,0 +1,31 @@
+# Dependency directories
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment variables file
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+.gitconfig
+
+# Editor files
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.out
+
+# Build files
+/build/
+
+# Logs and runtime data
+/logs/
+/run/
+
+# Configuration files that may contain sensitive information
+config.js

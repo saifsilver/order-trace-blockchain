@@ -1,0 +1,48 @@
+@hostname = localhost
+@port = 3000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+@createdAt = {{$datetime iso8601}}
+@modifiedBy = {{$processEnv USERNAME}}
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTcxMjQ4OTYxOCwiZXhwIjoxNzEyNDkzMjE4fQ.W2LYczDvzbk7ZBRy2U-g4LK3QcheOqEh4MpNHVgJHeM
+
+### Login
+
+POST http://{{host}}/login HTTP/1.1
+content-type: {{contentType}}
+
+{
+    "username": "username",
+    "password": "password"
+}
+
+### Get Blockchain
+
+GET http://{{host}}/blockchain HTTP/1.1
+content-type: {{contentType}}
+Authorization: token {{token}}
+
+
+### POST order
+
+POST http://{{host}}/order HTTP/1.1
+content-type: {{contentType}}
+Authorization: token {{token}}
+
+{
+    "id": "1001",
+    "products": [{
+        "apple": 100,
+        "orange": 200
+    }],
+    "customer": {
+        "name": "Saif"
+    }
+}
+
+### Get Mine Blocks
+
+GET http://{{host}}/mine HTTP/1.1
+content-type: {{contentType}}
+Authorization: token {{token}}

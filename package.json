@@ -1,0 +1,45 @@
+{
+  "name": "blockchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dist/main.cfc630a1f0b80491cef7.js",
+    "dev": "node ./app.js",
+    "test": "mocha --inspect --verbose",
+    "build": "npx webpack --config webpack.config.js",
+    "exe": "npx pkg --targets='node14-macos-x64' ./dist/main.cfc630a1f0b80491cef7.js"
+  },
+  "pkg": {
+    "scripts": "start",
+    "targets": [
+      "node14-macos-x64"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bitcoinjs-lib": "^6.1.5",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "babel-loader": "^9.1.3",
+    "chai": "^5.1.0",
+    "compression-webpack-plugin": "^11.1.0",
+    "hard-source-webpack-plugin": "^0.13.1",
+    "mocha": "^10.4.0",
+    "pkg": "^5.8.1",
+    "supertest": "^6.3.4",
+    "webpack": "^5.91.0",
+    "webpack-bundle-analyzer": "^4.10.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
