@@ -21,6 +21,7 @@ Thumbs.db
 
 # Build files
 /build/
+/dist/
 
 # Logs and runtime data
 /logs/
