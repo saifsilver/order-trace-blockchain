@@ -21,7 +21,7 @@ describe('Authentication', () => {
 
     it('should return a JWT token when logging in with correct credentials', (done) => {
         request(app)
-            .post('/login')
+            .post('/api/auth/login')
             .send({ username: 'admin', password: 'password' })
             .expect(200)
             .end((err, res) => {
@@ -34,34 +34,34 @@ describe('Authentication', () => {
 
     it('should return an error when logging in with incorrect credentials', (done) => {
         request(app)
-            .post('/login')
+            .post('/api/auth/login')
             .send({ username: 'admin', password: 'wrongpassword' })
             .expect(401, done);
     });
 
     it('should return an error when logging in with missing credentials', (done) => {
         request(app)
-            .post('/login')
+            .post('/api/auth/login')
             .send({})
             .expect(400, done);
     });
 
     it('should return an error for unauthorized access to blockchain API without token', (done) => {
         request(app)
-            .get('/blockchain')
+            .get('/api/blockchain')
             .expect(401, done);
     });
 
     it('should return an error for unauthorized access to blockchain API with invalid token', (done) => {
         request(app)
-            .get('/blockchain')
+            .get('/api/blockchain')
             .set('Authorization', 'Bearer invalid_token')
             .expect(403, done);
     });
 
     it('should return the blockchain for authenticated access', (done) => {
         request(app)
-            .get('/blockchain')
+            .get('/api/blockchain')
             .set('Authorization', `Bearer ${authToken}`)
             .expect(200)
             .end((err, res) => {
@@ -90,7 +90,7 @@ describe('Blockchain API', () => {
 
     it('should add a new order to pending transactions', (done) => {
         request(app)
-            .post('/order')
+            .post('/api/order')
             .set('Authorization', `Bearer ${authToken}`)
             .send({
                 id: '1',
@@ -107,7 +107,7 @@ describe('Blockchain API', () => {
 
     it('should add a new delivery to pending transactions', (done) => {
         request(app)
-            .post('/delivery')
+            .post('/api/delivery')
             .set('Authorization', `Bearer ${authToken}`)
             .send({
                 orderId: '1',
@@ -125,7 +125,7 @@ describe('Blockchain API', () => {
 
     it('should mine pending transactions and add them to the blockchain', (done) => {
         request(app)
-            .get('/mine')
+            .get('/api/blockchain/mine')
             .set('Authorization', `Bearer ${authToken}`)
             .expect(200)
             .end((err, res) => {

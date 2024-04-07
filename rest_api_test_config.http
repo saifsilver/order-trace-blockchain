@@ -5,11 +5,11 @@
 @createdAt = {{$datetime iso8601}}
 @modifiedBy = {{$processEnv USERNAME}}
 
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTcxMjQ5ODU5OSwiZXhwIjoxNzEyNTAyMTk5fQ.5grFLdQH-nLn3Cumb0yOalCXjgy_DysxcW9zBd9RINo
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTcxMjUwMDI3NywiZXhwIjoxNzEyNTAzODc3fQ.gl13YDkEcYvOM_bjtieylbrYGlbaovCcPit2Hv3ROtU
 
 ### Login
 
-POST http://{{host}}/login HTTP/1.1
+POST http://{{host}}/api/auth/login HTTP/1.1
 content-type: {{contentType}}
 
 {
@@ -19,14 +19,14 @@ content-type: {{contentType}}
 
 ### Get Blockchain
 
-GET http://{{host}}/blockchain HTTP/1.1
+GET http://{{host}}/api/blockchain HTTP/1.1
 content-type: {{contentType}}
 Authorization: token {{token}}
 
 
 ### POST order
 
-POST http://{{host}}/order HTTP/1.1
+POST http://{{host}}/api/order HTTP/1.1
 content-type: {{contentType}}
 Authorization: token {{token}}
 
@@ -43,6 +43,6 @@ Authorization: token {{token}}
 
 ### Get Mine Blocks
 
-GET http://{{host}}/mine HTTP/1.1
+GET http://{{host}}/api/blockchain/mine HTTP/1.1
 content-type: {{contentType}}
 Authorization: token {{token}}
