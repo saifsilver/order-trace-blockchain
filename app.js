@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const Blockchain = require('./src/blockchain');
-const Transaction = require('./src/transaction');
+// const Transaction = require('./src/transaction');
 
 const app = express();
 const PORT = 3000;

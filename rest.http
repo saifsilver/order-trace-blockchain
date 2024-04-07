@@ -5,7 +5,7 @@
 @createdAt = {{$datetime iso8601}}
 @modifiedBy = {{$processEnv USERNAME}}
 
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTcxMjQ4OTYxOCwiZXhwIjoxNzEyNDkzMjE4fQ.W2LYczDvzbk7ZBRy2U-g4LK3QcheOqEh4MpNHVgJHeM
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTcxMjQ5ODU5OSwiZXhwIjoxNzEyNTAyMTk5fQ.5grFLdQH-nLn3Cumb0yOalCXjgy_DysxcW9zBd9RINo
 
 ### Login
 
