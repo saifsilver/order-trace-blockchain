@@ -9,7 +9,6 @@ yarn-error.log
 # OS generated files
 .DS_Store
 Thumbs.db
-.gitconfig
 
 # Editor files
 .vscode/
@@ -29,3 +28,4 @@ Thumbs.db
 
 # Configuration files that may contain sensitive information
 config.js
+./main.*
